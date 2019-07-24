@@ -25,10 +25,18 @@ var userSchema = new mongoose.Schema({
         type: Date,
         default : Date.now() - 10000
     }, 
+    verificationToken : {
+        type : String
+    },
+    verificationStatus : {
+        type : Boolean,
+        default : false
+    },
     createdAt: {
         type: Date,
         default : Date.now()
-    }
+    },
+    
 });
 
 module.exports = mongoose.model('User', userSchema);

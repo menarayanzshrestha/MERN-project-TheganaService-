@@ -4,7 +4,8 @@
   "description": "simple project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon server.js"
   },
   "keywords": [
     "theganaservices"
@@ -22,6 +23,7 @@
     "mongoose": "^5.6.6",
     "morgan": "^1.9.1",
     "nodemailer": "^6.3.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "randomstring": "^1.1.5"
   }
 }
