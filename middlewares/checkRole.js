@@ -5,15 +5,27 @@ exports.isAdmin = (req, res, next) => {
         next();
     }else{
         return res.status(401).json({
-            message: "Auth failed."
+            message: "Auth failed.",
+            log : "Not a admin"
         })
     }
 }
 
-exports.isUser = (req, res, next) => {
+exports.isDeveloper = (req, res, next) => {
     var userData = req.userData;
     // console.log("ROLE Employer:", userData);
-    if(userData.role == "user"){
+    if(userData.role == "developer"){
+        next();
+    }else{
+        return res.status(401).json({
+            message: "Auth failed."
+        })
+    }
+}
+exports.isManager = (req, res, next) => {
+    var userData = req.userData;
+    // console.log("ROLE Employer:", userData);
+    if(userData.role == "manager"){
         next();
     }else{
         return res.status(401).json({
