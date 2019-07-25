@@ -6,6 +6,7 @@ var morgan = require('morgan');
 
 //Routes
 const routes = require('./routes/user');
+const userDataRoutes = require('./routes/userdata');
 
 var app = express();
 
@@ -34,6 +35,8 @@ app.use(bodyparser.json());
 // })
 
 app.use('/', routes);
+
+app.use('/userdata/', userDataRoutes);
 
 app.use((req, res, next) =>{
     const error = new Error('404 Route not found');
