@@ -33,12 +33,12 @@ module.exports = async(req, res) => {
             password
         } = req.body;
 
-        const userInfo = await User.find({ email });
+        const userInfo = await User.find({ email, verificationStatus:true });
 
         if(userInfo.length === 0) {
             return res.status(409).json({
                 message: "Auth failed.",
-                log: "User not exist."
+                log: "User not exist or not verified yet."
             })
         }
 

@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
         if(UserRoleChangeStatus.nModified === 0) {
             return res.status(500).json({
                 message : "Internal Server Error",
-                log: "Failed to update password"
+                log: "Failed to update role"
             })
         }
 

@@ -83,7 +83,7 @@ module.exports = async(req, res) => {
                 to: email, // list of receivers
                 subject: 'Verification Link | www.narayanstha.com.np', // Subject line
                 text: "Message through www.narayanstha.com.np ", // plain text body
-                html: `<h2><a href="localhost:8080/verification/${verificationToken}">Click here</a> for the verification : localhost:8080/verification/${verificationToken}</h2>`, // html body
+                html: `<h2><a href="localhost:3000/verification/${verificationToken}">Click here</a> for the verification : localhost:8080/verification/${verificationToken}</h2>`, // html body
             };
         
             transporter.sendMail(mailOptions, (res, error, info) => {
