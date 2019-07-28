@@ -1,0 +1,22 @@
+@import '../../variables';
+@import '../../main';
+
+.divider {
+
+    width: 1px;
+    background-color: $text;
+    height: 20px;
+    font-family: 'Roboto' !important;
+
+    &.small {
+        height: 10px;
+    }
+
+}
+
+.buttonsOrWrapper {
+    @include flex;
+    @include align-items(center);
+
+    float: right;
+}

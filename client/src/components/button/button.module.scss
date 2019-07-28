@@ -1,0 +1,53 @@
+@import '../../variables';
+
+.button {
+    border-radius: 0 !important;
+    min-width: 190px;
+
+    &.primary {
+        background-color: $primary !important;
+        color: #fff !important;
+        border: 1px solid $primary !important;
+    }
+    
+    &.secondary {
+        background-color: $theme !important;
+        border: 1px solid $primary !important;
+        color: $primary !important;
+    }
+
+    &.transparent {
+        background-color: transparent !important;
+        min-width: 0;
+
+        // edge
+        @supports (-ms-ime-align:auto) {
+            background-color: rgba(255,255,255,0);
+        }
+
+        &:hover {
+            background-color: rgba(255,255,255,0) !important; 
+        }
+    }
+
+    &.tiny {
+        padding: 0 5px !important;
+    }
+    
+    &.small {
+        padding: 10px !important;
+        font-size: 10px !important;
+    }
+
+    &.reduce {
+        @media screen and (max-width: 380px) {
+            font-size: 12px;
+        }
+    }
+
+    &.responsive {
+        @media screen and (max-width: 600px) {
+            min-width: 120px; 
+        }
+    }
+}

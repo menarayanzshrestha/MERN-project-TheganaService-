@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@mixin flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin justify-content($alignment) {
+    -webkit-box-pack: $alignment;
+        -ms-flex-pack: $alignment;
+            justify-content: $alignment;
+}
+
+@mixin align-items($alignment ) {
+    -webkit-box-align: $alignment;
+        -ms-flex-align: $alignment;
+            align-items: $alignment;
+}
+
+@mixin align-self($alignment) {
+    -ms-flex-item-align: $alignment;
+        align-self: $alignment;
+}
+
+@mixin justify-self($alignment) {
+    justify-self: $alignment;
+}
+
+@mixin flex-direction($direction) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+}
+
+@mixin flex-grow($growBy) {
+    -webkit-box-flex: $growBy;
+        -ms-flex-positive: $growBy;
+            flex-grow: $growBy;
+}
+
+@mixin flex-shrink($shrinkBy) {
+    -ms-flex-negative: $shrinkBy;
+        flex-shrink: $shrinkBy;
+}
+
+@mixin flex-basis($basis) {
+    -ms-flex-preferred-size: $basis;
+        flex-basis: $basis;
+}
+
+@mixin flex-wrap($wrap) {
+    -ms-flex-wrap: $wrap;
+        flex-wrap: $wrap;
+}
+
+@mixin order($order) {
+    -webkit-box-ordinal-group: $order;
+        -ms-flex-order: $order;
+            order: $order;
+}
+
+@mixin box-shadow($shadowArgs) {
+    -webkit-box-shadow: $shadowArgs;
+            box-shadow: $shadowArgs;
+}
+
+@mixin rotate($rotateBy) {
+    -webkit-transform: rotate($rotateBy);
+            transform: rotate($rotateBy);
+}
+
+@mixin translate($translateBy) {
+    -webkit-transform: translate($translateBy);
+            transform: translate($translateBy);
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin scale($scaleBy, $important:"") {
+    -webkit-transform: scale($scaleBy) unquote($important);
+            transform: scale($scaleBy) unquote($important);    
+}
+
+@mixin linear-gradient($args...) {
+
+    background-image: -webkit-gradient($args);
+
+    background-image: -webkit-gradient(linear, left top, left bottom, from($args));
+
+    background-image: linear-gradient($args);
+
+}
+
+@mixin grayscale($value) {
+
+    -webkit-filter: grayscale($value);
+
+            filter: grayscale($value);
+
+}
+
+@mixin clip-path($args) {
+
+    -webkit-clip-path: polygon(35% 0%, 100% 0, 100% 100%, 35% 100%, 0 50%);
+    clip-path: polygon(35% 0%, 100% 0, 100% 100%, 35% 100%, 0 50%)
+
+}
+/* CSS specific to iOS devices */ 
+@supports (-webkit-overflow-scrolling: touch) {
+
+    input {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -webkit-appearance: none;
+    }
+
+}

@@ -1,0 +1,124 @@
+@import '../../variables';
+@import '../../main';
+
+.navbar {
+
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+
+    @media screen and (max-width: 850px) {
+        border-bottom: 1px solid $stroke;
+        background-color: white !important;
+        position: static;
+    }
+
+    > .navMenu {
+
+        @include flex;
+        @include justify-content(space-around);
+
+        margin-right: 0 !important;
+        
+        @media screen and (max-width: 850px) {
+            @include justify-content(space-between);
+        }
+
+        &::after {
+            content: none !important;
+        }
+    }
+
+    .navItem {
+
+        color: $text !important;
+
+        &:hover {
+            background-color: transparent !important;
+        }
+
+        &.active.active.active.active, &:hover {
+            color: $primary !important;
+            background-color: transparent !important;
+        }
+
+        > a {
+
+            @include transition(color 0.025s linear);
+
+            text-transform: uppercase;
+            font-weight: 600;
+            color: inherit;
+
+        }
+    }
+
+}
+
+.active {
+    color: $primary !important;
+}
+
+.verticalNavbar {
+
+    position: absolute !important;
+    z-index: 5;
+    top: 60px;
+    left: 0;
+    width: 100vw !important;
+    z-index: 1;
+    padding-left: 5px;
+    margin: 0 !important;
+
+    @media screen and (max-width: 850px) {
+
+        @include transition(max-height 0.425s ease-in-out);
+    
+        &.verticalNavbar.verticalNavbar.verticalNavbar.verticalNavbar { //setting precedence higher
+            @include box-shadow(0 4px 4px 0 $stroke);
+        }
+
+        max-height: 0;
+        min-height: 0 !important;
+        overflow: hidden;
+        background-color: white !important;
+
+        &.visible {
+            max-height: 1000px;
+        }
+
+    }
+
+}
+
+
+.logo {
+    height: 50px;
+    padding-bottom: 5px;
+
+    @media screen and (max-width: 380px) {
+        height: 35px;
+    }
+
+}
+
+.barsWrapper {
+
+    @include flex;
+    @include align-items(center);
+
+    height: 100%;
+
+    .bars {
+        height: 25px;
+        width: auto;
+        margin-left: 23px !important;
+
+        @media screen and (max-width:380px) {
+            height: 17px;
+            margin-left: 18px;
+        }
+    }
+
+}

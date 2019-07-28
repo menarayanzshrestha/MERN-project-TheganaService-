@@ -1,0 +1,9 @@
+@import '../../main';
+
+.segment {
+    
+    @include flex;
+    @include justify-content(center);
+    @include align-items(center);
+    
+}
