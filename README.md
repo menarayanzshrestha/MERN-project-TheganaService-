@@ -1,7 +1,7 @@
 # MERN-project-TheganaService-
 
 Front End : 
-REAct
+REACT JS
 
 to start go to client folder and type:
 npm start
