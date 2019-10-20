@@ -1,6 +1,6 @@
 # MERN-project-TheganaService-
 
-Front End : 
+Front End- 
 REACT JS
 
 to start go to client folder and type:
